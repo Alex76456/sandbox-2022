@@ -16,4 +16,4 @@ Applying and experimenting with the knowledge gained in commercial development.
 
 - [x] Создать SPA
 
-<!-- - [x] Создать репозиторий -->
+- [] Настроить архитектуру MVVM
