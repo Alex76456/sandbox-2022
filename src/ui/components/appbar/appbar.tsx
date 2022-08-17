@@ -16,7 +16,6 @@ import Tooltip from "@mui/material/Tooltip"
 import { getUserAvatarSrc } from "@utils/get-user-avatar"
 import { toFixedWithDollarSign } from "@utils/text"
 import { t } from "@utils/translations"
-// import NotificationsIcon from '@material-ui/icons/Notifications'
 import clsx from "clsx"
 import { observer } from "mobx-react"
 import React, { useRef, useState, FC } from "react"
@@ -133,7 +132,7 @@ export const Appbar: FC<Props> = observer(({ children, title, setDrawerOpen, las
               aria-haspopup="true"
               onClick={handleClick}
             >
-              <Avatar className={classNames.avatar} src={getUserAvatarSrc(componentModel.current.userId)} />
+              <Avatar className={classNames.avatar} src={"/assets/imgs/no-photo.jpg"} />
 
               <div className={classNames.usernameAndBalanceWrapper}>
                 <Typography className={classNames.username}>{componentModel.current.userName}</Typography>

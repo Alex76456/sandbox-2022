@@ -10,7 +10,7 @@ export const FallBack = () => {
   return (
     <div className={classNames.root}>
       <div className={classNames.header}>
-        <img className={classNames.logo} alt="company logo" src={'/assets/icons/logo-var-2.svg'} />
+        <img className={classNames.logo} alt="company logo" src={'/assets/icons/sandbox-icon.svg'} />
       </div>
       <div className={classNames.main}>
         <Typography className={classNames.title}>{'Иногда, чтобы идти вперёд, нужно сделать шаг назад.'}</Typography>

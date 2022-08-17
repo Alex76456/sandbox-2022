@@ -16,7 +16,7 @@ import {AuthViewModel} from './auth-view.model'
 import {styles} from './auth-view.style'
 
 @observer
-export class AuthViewRaw extends Component {
+class AuthViewRaw extends Component {
   viewModel = new AuthViewModel({history: this.props.history})
   render() {
     const {classes: classNames} = this.props
