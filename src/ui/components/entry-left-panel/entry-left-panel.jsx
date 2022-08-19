@@ -17,7 +17,7 @@ export const EntryLeftPanel = () => {
       </div>
       <div className={classNames.main}>
         <Typography className={classNames.title}>{t(TranslationKey['Hello, nice to meet you'])}</Typography>
-        <Typography className={classNames.subtitle}>{t(TranslationKey['Just register to join with us'])}</Typography>
+        <Typography className={classNames.subtitle}>{t(TranslationKey['Welcome to the sandbox'])}</Typography>
       </div>
       <div className={classNames.footer}></div>
     </div>

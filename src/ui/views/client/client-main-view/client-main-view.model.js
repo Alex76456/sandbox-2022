@@ -2,7 +2,7 @@ import {makeAutoObservable} from 'mobx'
 
 
 
-export class ClientInventoryViewModel {
+export class ClientMainViewModel {
   history = undefined
   requestStatus = undefined
   error = undefined
@@ -16,6 +16,8 @@ export class ClientInventoryViewModel {
     makeAutoObservable(this, undefined, {autoBind: true})
     
   }
+
+  loadData(){}
 
 
   onChangeDrawerOpen(e, value) {

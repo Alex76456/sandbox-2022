@@ -1,11 +1,6 @@
 import {action, makeAutoObservable} from 'mobx'
 
 import {loadingStatuses} from '@constants/loading-statuses'
-import {privateRoutesConfigs} from '@constants/routes'
-import {UserRoleCodeMap} from '@constants/user-roles'
-
-// import {UserModel} from '@models/user-model'
-
 import {getObjectKeys} from '@utils/object'
 
 export class AuthViewModel {
@@ -16,6 +11,8 @@ export class AuthViewModel {
   email = ''
   password = ''
   remember = false
+
+  showSuccessModal=true
 
   formValidationErrors = {
     email: null,
@@ -42,22 +39,16 @@ export class AuthViewModel {
       }
     })
 
+  onTriggerOpenModal(modal){
+
+    this[modal]=!this[modal]
+  }
+
   async onSubmitForm() {
     try {
-      // this.requestStatus = loadingStatuses.isLoading
-      // this.error = undefined
-      // await UserModel.signIn(this.email, this.password)
-      // await UserModel.getUserInfo()
-      // if (UserModel.accessToken) {
-      //   this.requestStatus = loadingStatuses.success
-      //   const allowedRoutes = privateRoutesConfigs.filter(route =>
-      //     route?.permission?.includes(UserRoleCodeMap[UserModel.userInfo.role]),
-      //   )
-      //   this.history.push(allowedRoutes[0].routePath)
-      // } else {
-      //   this.requestStatus = loadingStatuses.failed
-      //   this.error = new Error('No accessToken in response')
-      // }
+      this.history.push('client/main')
+
+
     } catch (error) {
       this.requestStatus = loadingStatuses.failed
       this.error = error

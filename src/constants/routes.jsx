@@ -1,7 +1,7 @@
 import { TranslationKey } from "./translations/translation-key"
 import { UserRole } from "./user-roles"
 import { AuthView } from "@views/auth"
-import { ClientInventoryView } from "@views/client/client-inventory-view"
+import { ClientMainView } from "@views/client/client-main-view"
 import { RegistrationView } from "@views/registration"
 
 // import { AnotherUserProfileView } from "@views/shared/another-user-profile-view"
@@ -37,8 +37,8 @@ export const overallRoutesConfigs = [
 
 export const privateRoutesConfigs = [
   {
-    routePath: "/client/inventory",
-    component: ClientInventoryView,
+    routePath: "/client/main",
+    component: ClientMainView,
     exact: true,
     permission: [UserRole.CLIENT],
     crumbNameKey: TranslationKey.Inventory,

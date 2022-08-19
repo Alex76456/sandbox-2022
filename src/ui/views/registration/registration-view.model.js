@@ -26,7 +26,7 @@ export class RegistrationViewModel {
   formValidationErrors = {
     email: null,
     password: null,
-    confirmPassword: null,
+    confirmPassword: null, 
   }
 
   constructor({history}) {

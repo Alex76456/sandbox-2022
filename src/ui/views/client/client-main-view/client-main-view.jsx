@@ -14,17 +14,17 @@ import {MainContent} from '@components/main-content'
 import {Navbar} from '@components/navbar'
 import {t} from '@utils/translations'
 
-import {ClientInventoryViewModel} from './client-inventory-view.model'
-import {styles} from './client-inventory-view.style'
+import {ClientMainViewModel} from './client-main-view.model'
+import {styles} from './client-main-view.style'
 
-const navbarActiveCategory = navBarActiveCategory.NAVBAR_INVENTORY
+const navbarActiveCategory = navBarActiveCategory.NAVBAR_MAIN
 
 @observer
-class ClientInventoryViewRaw extends Component {
-  viewModel = new ClientInventoryViewModel({history: this.props.history, location: this.props.location})
+class ClientMainViewRaw extends Component {
+  viewModel = new ClientMainViewModel({history: this.props.history, location: this.props.location})
 
   componentDidMount() {
-    this.viewModel.loadData()
+    // this.viewModel.loadData()
   }
 
   render() {
@@ -52,4 +52,4 @@ class ClientInventoryViewRaw extends Component {
   }
 }
 
-export const ClientInventoryView = withStyles(styles)(ClientInventoryViewRaw)
+export const ClientMainView = withStyles(styles)(ClientMainViewRaw)

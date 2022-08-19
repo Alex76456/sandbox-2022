@@ -14,6 +14,7 @@ import {t} from '@utils/translations'
 
 import {AuthViewModel} from './auth-view.model'
 import {styles} from './auth-view.style'
+import { SuccessInfoModal } from '../../components/modals/success-info-modal'
 
 @observer
 class AuthViewRaw extends Component {
@@ -41,6 +42,17 @@ class AuthViewRaw extends Component {
           />
           {this.renderError()}
         </EntryRightPanel>
+
+
+        <SuccessInfoModal
+          openModal={this.viewModel.showSuccessModal}
+          setOpenModal={() => this.viewModel.onTriggerOpenModal('showSuccessModal')}
+          title={t(TranslationKey['Authorization and registration are just an example. You can safely login.'])}
+          successBtnText={t(TranslationKey.Ok)}
+          onClickSuccessBtn={() => {
+            this.viewModel.onTriggerOpenModal('showSuccessModal')
+        }}
+      />
       </div>
     )
   }

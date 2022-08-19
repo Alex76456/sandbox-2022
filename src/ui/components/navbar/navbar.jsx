@@ -5,7 +5,6 @@ import clsx from 'clsx'
 import {observer} from 'mobx-react'
 
 import {navbarConfig} from '@constants/navbar'
-import {UserRoleCodeMap} from '@constants/user-roles'
 
 import {SettingsModel} from '@models/settings-model'
 
@@ -13,6 +12,7 @@ import {NavbarCategory} from './navbar-category'
 import {NavbarCollapse} from './navbar-collapse'
 import {NavbarModel} from './navbar.model'
 import {useClassNames} from './navbar.style'
+import { UserRole } from '../../../constants/user-roles'
 
 export const Navbar = observer(
   ({activeCategory, activeSubCategory, drawerOpen, setDrawerOpen, onChangeSubCategory}) => {
@@ -32,20 +32,20 @@ export const Navbar = observer(
         </div>
 
         <List className={classNames.categoriesWrapper}>
-          {curNavbar[UserRoleCodeMap[viewModel.current.userInfo.role]].map((category, index) =>
-            category.checkHideBlock(viewModel.current.userInfo) ? (
+          {curNavbar[UserRole.CLIENT].map((category, index) =>
+             (
               <React.Fragment key={index}>
                 <NavbarCategory
                   button
                   isSelected={category.key === activeCategory}
-                  userInfo={viewModel.current.userInfo}
+                  // userInfo={viewModel.current.userInfo}
                   category={category}
-                  badge={
-                    category.route?.includes('/client/notifications') &&
-                    viewModel.current.userInfo.needConfirmPriceChange.boxes +
-                      viewModel.current.userInfo.needConfirmPriceChange.orders +
-                      viewModel.current.userInfo.needUpdateTariff.boxes
-                  }
+                  // badge={
+                  //   category.route?.includes('/client/notifications') &&
+                  //   viewModel.current.userInfo.needConfirmPriceChange.boxes +
+                  //     viewModel.current.userInfo.needConfirmPriceChange.orders +
+                  //     viewModel.current.userInfo.needUpdateTariff.boxes
+                  // }
                 />
 
                 <NavbarCollapse
@@ -53,12 +53,12 @@ export const Navbar = observer(
                   activeSubCategory={activeSubCategory}
                   category={category}
                   index={category.key}
-                  userInfo={viewModel.current.userInfo}
-                  currentViewModel={viewModel.current}
+                  // userInfo={viewModel.current.userInfo}
+                  // currentViewModel={viewModel.current}
                   onChangeSubCategory={onChangeSubCategory}
                 />
               </React.Fragment>
-            ) : null,
+            ) 
           )}
         </List>
       </React.Fragment>

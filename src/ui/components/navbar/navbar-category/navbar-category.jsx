@@ -7,7 +7,6 @@ import {Link} from 'react-router-dom'
 
 import {Button} from '@components/buttons/button'
 
-import {renderTooltipTitle} from '@utils/renders'
 
 import {styles} from './navbar-category.style'
 
@@ -25,7 +24,6 @@ const NavBarCategoryRaw = observer(({badge, classes: classNames, isSelected, use
   return (
     <Button
       tooltipPosition="center"
-      tooltipInfoContent={renderTooltipTitle(category.title, userInfo.role)}
       className={classNames.menuItem}
     >
       <MuiListItem
